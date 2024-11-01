@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width= , initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="index.css"> -->
+  </head>
+  <body>
+    <div id="root">
+      <!-- A simple hello world program in html css -->
+      <!-- <h1>HELLO WORLD!!</h1> -->
+
+      <!-- hello world using JS -->
+      <!-- <script>
+            create h1 tag
+            const heading = document.createElement("h1");
+            heading.innerHTML = `HELLO WORLD USING JS`;
+
+            put that h1 inside the root
+            const root = document.getElementById("root");
+            root.appendChild(heading);
+         </script> -->
+      <h1>aashish</h1>
+
+      <!-- !!!!!!! if this root already contains elements => root.render will replace everything!!!!!!!!!! -->
+    </div>
+
+    <!-- Now to write hello world in react => we first need to get react into our project => that can be done using 1: CDN links => cdn links are content delivery networks := basically the websites where react is hoisted and we need to pull it from there -->
+
+    <!-- <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script> -->
+    <!-- FIRST FILE => THIS IS THE CORE REACT FILE => USED EVERYWHERE => REACT NATIVE {PHONES}, WEBD etc.-->
+    <!-- <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script> -->
+    <!-- SECOND FILE => THIS IS THE FILE THAT HANDLES DOM MANIPULATION PART USING REACT -->
+
+    <!-- THIS IS NOT A PREFERRED WAY TO IMPORT REACT : A BETTER WAY IS TO DO IT IS THROUGH npm
+    bcuz FETCHING FROM NETWORK IS TIME CONSUMING -->
+
+    <!-- TRY WRITING React ON CONSOLE -->
+    <!-- TRY WRITING ReactDOM ON CONSOLE -->
+
+    <!-- ======================================================================================================== 
+     WHY DO WE USE CDN LINKS?
+
+    We use CDN links for several important reasons:
+
+    1. Improved Load Times
+
+    Faster Content Delivery: Since CDNs have servers distributed globally, using a CDN link allows users to load resources (like JavaScript libraries, CSS files, or images) from the server closest to them, significantly reducing load times.
+    Parallel Downloads: Browsers limit the number of concurrent connections to the same domain. By using CDN links, assets are fetched from different domains, allowing parallel downloads and faster page rendering.
+
+    2. Reduced Server Load
+
+    Offloading Traffic: By serving resources via a CDN, you reduce the load on your own servers. This is particularly useful during high traffic periods, as the CDN handles most of the content delivery.
+    Efficient Caching: CDNs cache the resources across multiple servers, meaning the same content doesn't have to be repeatedly fetched from your origin server.
+
+    3. Better Reliability and Availability
+
+    Redundancy: CDNs are designed to provide high availability. If one server fails, another server in the network can deliver the content, ensuring minimal downtime.
+    Global Reach: CDNs have multiple servers around the world, making sure that content is available and delivered efficiently to users regardless of their location.
+
+    4. Security Enhancements
+
+    Protection Against DDoS Attacks: CDNs often include features that protect against Distributed Denial of Service (DDoS) attacks by distributing traffic across their network.
+    SSL/TLS: Many CDNs offer SSL/TLS encryption for secure data transfer, enhancing website security.
+
+    5. Version Control and Popularity
+
+    Popular Libraries: Many widely-used libraries (like jQuery, Bootstrap, etc.) are hosted on CDNs. Using the CDN link ensures that the user is likely to have a cached copy of that resource, reducing the need to download it again.
+    Versioning: CDNs often allow you to specify the version of a library you want to use, ensuring compatibility and stability for your application. 
+    
+    ========================================================================================================= -->
+
+    <!-- 
+    ======================================================================================================
+    WHAT IS CROSSORIGIN IN CDN LINK? AND WHY TO USE IT?
+
+    The crossorigin attribute in CDN links is used to manage how browsers handle requests for resources that are loaded from a different origin (domain, protocol, or port) than the one serving the web page. This attribute is important for security and privacy, particularly in the context of Cross-Origin Resource Sharing (CORS).
+
+    =========================================================================================================
+    Purpose of crossorigin in CDN Links:
+
+    1. Handling Cross-Origin Requests:
+    When you load a resource (like a script, image, or stylesheet) from a CDN that is on a different origin (domain) than your website, it's considered a cross-origin request. The crossorigin attribute tells the browser how to handle these requests.
+
+    2. Controlling Resource Sharing:
+    It helps in controlling whether the browser should include credentials (like cookies or HTTP authentication) in the requests to the CDN.
+    It also determines if the browser should expose the resource to JavaScript (for example, when using the fetch API).
+
+    =========================================================================================================
+    Key Values:
+
+    1: anonymous:
+        No credentials are sent with the request.
+        Used for public resources.
+
+    2: use-credentials:
+        Credentials are included in the request.
+        Used when the resource requires authentication.
+
+    3:No crossorigin Attribute:
+    If the crossorigin attribute is not specified, the browser will treat the request as a simple request, which doesn't include credentials. The resource might not be accessible if the CDN requires credentials or CORS headers.
+
+    <script src="https://cdn.example.com/script.js" crossorigin="anonymous"></script>
+
+    This tells the browser to load script.js from the CDN without sending any credentials, which is generally safe and recommended for public resources.
+
+    =========================================================================================================
+    -->
+
+    <!-- <script src="app.js"></script> -->
+
+    <script type="module" src="app.js"></script>
+    <!-- type="module": This attribute indicates that the JavaScript file you're including should be treated as a module. 
+    Modules allow you to use import and export statements to manage code dependencies and share functionality between different files.
+    By specifying type="module", you're telling the browser that the script follows modern JavaScript module syntax. -->
+
+    <!-- THE ORDER OF THE FILE SHOULD BE STRICTLY MENTIONED AS IT IS  -->
+  </body>
+</html>

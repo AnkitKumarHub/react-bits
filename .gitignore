@@ -1,0 +1,10 @@
+node_modules
+episode 1,2/.parcel-cache/
+episode 1,2/dist
+episode 1,2/package-lock.json
+episode 3 laying the foundation/.parcel-cache
+episode 3 laying the foundation/dist/
+episode 3 laying the foundation/package-lock.json
+episode_4/.parcel-cache/
+episode_4/dist/
+episode_4/package-lock.json
