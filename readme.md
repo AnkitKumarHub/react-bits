@@ -68,5 +68,66 @@ Not using keys (not acceptable ) <<<<<<< index as the key <<<<<<<<<<<<<< Unique 
 
 
 
+# ep-05 let get's hooked
 
 
+
+*** File Strucutre ***
+- All the source code are written in src (source code) folder 
+- and all the components in the "components" folder 
+
+
+
+* APP UI(Namaste Food)
+/**
+ * Header
+ *  - logo
+ *  - nav items
+ * Body
+ *  - search bar
+ *  - Restaurant Container
+ *      - restaurantCard
+ * Footer
+ *  - copyright
+ *  - links
+ *  - address
+ *  - contact
+ */
+
+
+
+There are two types of Export/Import
+ - Default export/Import
+ 
+    when you have to export only one module => export default component
+
+    Import => import <Componet name> from <path>
+
+
+ - Named export/Import
+    when you want to export multiple things we use named export 
+        export const component
+
+    Import => import {component} from "path";
+        
+
+Ques => can we use default along with named export???
+
+*** -----------------------------------------------------------------------------------------------------------  *** 
+
+* feature => building a button(filter like functionality) which will show us top rated restaurant on the click 
+
+
+* when we say react is fast => react is fast, efficient in DOM Manipulation , Virtual DOM, diff algorithm, reconcilation Algo(React Fibre => react-16) (suppose you want to keep data layer and UI layer consistent with each other that is wher React comes to the picture => if my data chnages the UI layer changes )
+
+
+*** React Hooks ***
+
+- react Hook => Normal js utility function given by react with some additional feature prebuilt 
+
+1. useState() - Superpowerful state variable in react 
+2. useEffect()
+
+state variable => super powerful variable 
+
+whenever a state variable updates react will re-renders the component 
