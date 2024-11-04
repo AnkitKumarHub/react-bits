@@ -131,3 +131,44 @@ Ques => can we use default along with named export???
 state variable => super powerful variable 
 
 whenever a state variable updates react will re-renders the component 
+
+
+
+# ep-06 exploring the world 
+
+* useEffect hook => it will take two argument 1st is Arrow function (callback fun) and 2nd is dependency array
+syntax => useEffect(()=>{}, []) 
+
+now the question is when will the callback function will be called ??
+ans- this call back function will be called after the component renders 
+
+fetch() is a func provided by the browser which returns the promise which you will be resolve by async and await 
+
+**ERROR** Access to fetch at from origin 'http://localhost:1234' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource (our browser block us to call one api from one origin to different origin)
+
+
+what is CORS Policy ??? => solved by cors extension 
+
+
+**Shimmer UI**
+- just rendering fake cards for better UI experience untill the data comes from the api
+
+* Loogin functionality
+
+
+// why do we even need state variable 
+
+=> with simple local JS variable the value gets updated but the UI doesn't get updated or rendered 
+- react will not track the updated value of the variable but with the useState hook the react will track the value of the "state variable" and when ever it changes using the setbtnname() react will re-render the whole component(header)  
+
+
+**Search-Functionality**
+
+
+
+
+
+********code slowww************
+- the people who code slow doesnot need to debug their code or very less and people who code fast have to debug alot
+
+
