@@ -1,3 +1,8 @@
+********code slowww************
+- the people who code slow doesnot need to debug their code or very less and people who code fast have to debug alot
+
+
+
 # 4
 
 * how to give inline styles in react (you cant give directly with the help of style tag as in css)
@@ -55,6 +60,8 @@ some data can be different for delhi mumbai or kolkata for eg in SWIGGY offers w
 *** option chaining (?.)***
 
 This ?. ensures that if resData or resData.info is undefined or null, the code won’t throw an error. Instead, each variable will get the value undefined safely.
+
+Optional chaining (?.) is a feature in JavaScript that allows you to safely access deeply nested properties of an object without worrying about whether a property along the chain exists or is null or undefined. If any part of the chain is null or undefined, the evaluation stops and returns undefined instead of throwing an error.
 
 
 * Map
@@ -136,39 +143,43 @@ whenever a state variable updates react will re-renders the component
 
 # ep-06 exploring the world 
 
+Hook => it is normal javascript function which react gives to us which has its own specific use case where we use this function 
+
 * useEffect hook => it will take two argument 1st is Arrow function (callback fun) and 2nd is dependency array
-syntax => useEffect(()=>{}, []) 
+syntax => useEffect(()=>{"callBack function"}, []) 
 
 now the question is when will the callback function will be called ??
-ans- this call back function will be called after the component renders 
+ans- this call back function will be called after the component is rendered
 
-fetch() is a func provided by the browser which returns the promise which you will be resolve by async and await 
+fetch() is a func provided by the browser superpower shich JS engine has which returns the promise which you will be resolve by async and await 
 
 **ERROR** Access to fetch at from origin 'http://localhost:1234' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource (our browser block us to call one api from one origin to different origin)
 
 
 what is CORS Policy ??? => solved by cors extension 
+CORS (Cross-Origin Resource Sharing) is a security mechanism implemented by web browsers to regulate how resources hosted on one domain can be requested by a web application hosted on a different domain. It prevents unauthorized access and ensures that only permitted cross-origin requests are allowed.
+
+
 
 
 **Shimmer UI**
-- just rendering fake cards for better UI experience untill the data comes from the api
-
-* Loogin functionality
+- just rendering fake cards (pages) for better UI experience untill the data comes from the api
 
 
-// why do we even need state variable 
+* Loogin functionality => when we click on Login button it should change to the logout and then again on click to login 
 
-=> with simple local JS variable the value gets updated but the UI doesn't get updated or rendered 
+// why do we even need state variable can't we use normal javascript variable 
+
+
+=> with simple local JS variable the value gets updated but the " UI doesn't get updated or rendered " 
+
 - react will not track the updated value of the variable but with the useState hook the react will track the value of the "state variable" and when ever it changes using the setbtnname() react will re-render the whole component(header)  
+
+how it is changing or modifying  the value of const variable ?? Is it not defeating the javascript variable 
+
+That on the initial time state variable was login but as soon as i do setBtnName("Logout") it will call header function once again it will create a new instance, this btnName in react is different from the older which was getting printed and when the newBtnName is created it is not created with the default value but with the updated value from the setBtnName()
 
 
 **Search-Functionality**
-
-
-
-
-
-********code slowww************
-- the people who code slow doesnot need to debug their code or very less and people who code fast have to debug alot
 
 

@@ -36,6 +36,7 @@ const Body = () => {
 
   //conditional rendering
   // if(listOfRestaurants.length === 0){
+  //  or the loading spinner icon 
   //   return <Shimmer/>
   // }
 
@@ -58,7 +59,7 @@ const Body = () => {
             placeholder="search"
             value={searchText}
             onChange={(e)=>{
-              setsearchText(e.target.value) //!with every letter being typed => the component gets rendered again
+              setsearchText(e.target.value) //!with every letter being typed => the component gets rendered again => but it is only updating the input box value inside the DOM (DOM Manipulation is very expensive but react is very efficient in doing this)
             }}
           ></input>
           <button className="search-btn" onClick={()=>{
