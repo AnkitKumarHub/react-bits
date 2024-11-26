@@ -1,6 +1,7 @@
 import RestaurantCard from "./restaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router";
 
 const Body = () => {
   // Local state variable - super powerful variable - it maintains the state of the component
@@ -9,10 +10,10 @@ const Body = () => {
 
   const [filteredRestaurant, setfilteredRestaurant] = useState([]);
 
-  const[searchText, setsearchText] = useState("")
+  const [searchText, setsearchText] = useState("");
 
   //whenever state variable update, react triggers a reconciliation cycle (re-renders the component)
-  // console.log("Body Rendered")  //to check that on each word type the body re-renders again and again 
+  // console.log("Body Rendered")  //to check that on each word type the body re-renders again and again
 
   useEffect(() => {
     fetchData();
@@ -26,16 +27,17 @@ const Body = () => {
     console.log(json);
     //optional chaining
 
-    const restaurant = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    const restaurant =
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
 
-    setlistOfRestaurants(restaurant)
+    setlistOfRestaurants(restaurant);
     setfilteredRestaurant(restaurant);
-      
   };
 
   //conditional rendering
   // if(listOfRestaurants.length === 0){
-  //  or the loading spinner icon 
+  //  or the loading spinner icon
   //   return <Shimmer/>
   // }
 
@@ -43,35 +45,40 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div className="body">
-
       <div className="filter">
-
         <div className="search">
-
-          {/* <input type = "text" className="search-box" value = {searchText} /> */
-                    //^ in the above code...we have bound the value of input box with searchText => and hence, we cannot type anything as searchText is declared empty above hence, use onChange handler
-                  }
+          {
+            /* <input type = "text" className="search-box" value = {searchText} /> */
+            //^ in the above code...we have bound the value of input box with searchText => and hence, we cannot type anything as searchText is declared empty above hence, use onChange handler
+          }
 
           <input
             type="text"
             className="search-box"
             placeholder="search"
             value={searchText}
-            onChange={(e)=>{
-              setsearchText(e.target.value) //!with every letter being typed => the component gets rendered again => but it is only updating the input box value inside the DOM (DOM Manipulation is very expensive but react is very efficient in doing this)
+            onChange={(e) => {
+              setsearchText(e.target.value); //!with every letter being typed => the component gets rendered again => but it is only updating the input box value inside the DOM (DOM Manipulation is very expensive but react is very efficient in doing this)
             }}
           ></input>
-          <button className="search-btn" onClick={()=>{
-            //filter the restaurant card ans updates the UI
-            //searchText
+          <button
+            className="search-btn"
+            onClick={() => {
+              //filter the restaurant card ans updates the UI
+              //searchText
 
-            const filteredRestaurant = listOfRestaurants.filter((res)=>{
-              return res.info.name.toLowerCase().includes(searchText.toLowerCase());
-            })
-            setfilteredRestaurant(filteredRestaurant);
-          }}>Search</button>
+              const filteredRestaurant = listOfRestaurants.filter((res) => {
+                return res.info.name
+                  .toLowerCase()
+                  .includes(searchText.toLowerCase());
+              });
+              setfilteredRestaurant(filteredRestaurant);
+            }}
+          >
+            Search
+          </button>
         </div>
-        
+
         <button
           className="filter-btn"
           onClick={() => {
@@ -87,7 +94,12 @@ const Body = () => {
       </div>
       <div className="rest-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link className=""
+            key={restaurant.info.id}
+            to={"/restaurants/" + restaurant.info.id}
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
